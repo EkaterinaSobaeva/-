@@ -5,20 +5,20 @@ let win = '';
 
 function startGame() {
   playArea = [['', '', ''], ['', '', ''], ['', '', '']];
-  activePlayer = '';
+  activePlayer = 0;
   win = '';
   renderBoard(playArea);
 }
 
 function click(row, col) {
 
-  if (activePlayer == players[0] || activePlayer == '') {
-      activePlayer = players[1];
+  if (activePlayer === 0) {
+      activePlayer = 1;
     } else {
-      activePlayer = players[0];        
+      activePlayer = 0;        
     }
   
-  playArea[row][col] = activePlayer;
+  playArea[row][col] = players[activePlayer];
   renderBoard(playArea);
   
     let a1 = playArea[0][0];
